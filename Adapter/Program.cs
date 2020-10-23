@@ -6,10 +6,10 @@ namespace Adapter
     {
         static void Main(string[] args)
         {
-            //Se crean objetos Pato y Pavo
+            //Se crean objetos Pato y Pavo.
             MallardDuck duck = new MallardDuck();
             WildTurkey turkey = new WildTurkey();
-            //Se crea un Pavo disfrazado de Pato
+            //Se crea un Pavo disfrazado de Pato envolviendolo en un adaptador.
             IDuck turkeyAdapter = new TurkeyAdapter(turkey);
 
             Console.WriteLine("The Turkey says: ");
@@ -24,7 +24,7 @@ namespace Adapter
             testDuck(turkeyAdapter);
             Console.ReadKey();
         }
-
+        // Metodo de prueba donde nuestro pavo se hace pasar por un pato.
         private static void testDuck(IDuck duck)
         {
             duck.Quack();
